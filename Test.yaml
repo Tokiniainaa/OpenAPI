@@ -1,0 +1,65 @@
+openapi: '3.0.2'
+info:
+  title: Revision Api
+  version: '1.0'
+servers:
+  - url: https://api.server.test/v1
+paths:
+  /book:
+    get:
+      summary: get a book
+      description: The order of the book is ordered by...
+      operationId: find a book
+      parameters:
+        - in: query
+          name: bookName 
+          description: Filter return books by given name 
+          required: false
+          schema:
+            type: string     
+      responses:
+        '200':
+          description: List of filtered book
+          content:
+            application/json:
+             schema:
+              type: array
+              items:
+               type: object
+               properties:
+                 id: 
+                  type: string
+                 bookName:
+                  type: string
+    put:
+      summary: Create or update a list of books
+      description: The order of the book is ordered by...
+      operationId: Create or update a book
+      requestBody:
+       description: description...
+       required: true
+       content:
+         application/json:
+             schema:
+              type: array
+              items:
+               type: object
+               properties:
+                 id: 
+                  type: string
+                 bookName:
+                  type: string
+      responses:
+        '200':
+          description: List of filtered book
+          content:
+            application/json:
+             schema:
+              type: array
+              items:
+               type: object
+               properties:
+                 id: 
+                  type: string
+                 bookName:
+                  type: string
